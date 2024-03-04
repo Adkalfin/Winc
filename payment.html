@@ -306,21 +306,22 @@
                 <hr class="my-4">
                 <h4 class="mb-3">Payment</h4>
 
-                <div id="pinc">creditCard</div>
-
                 <!-- Payment Method Option -->
                 <div class="my-3">
                   <div class="form-check">
-                    <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="">
+                    <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required
+                      value="creditCard">
                     <label class="form-check-label" for="credit">Credit card</label>
                   </div>
                   <div class="form-check">
-                    <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+                    <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required
+                      value="debitCard">
                     <label class="form-check-label" for="debit">Bank Transfer</label>
                   </div>
                   <div class="form-check">
-                    <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
-                    <label class="form-check-label" for="paypal">PayPal</label>
+                    <input id="PayPal" name="paymentMethod" type="radio" class="form-check-input" required
+                      value="paypalCard">
+                    <label class="form-check-label" for="PayPal">PayPal</label>
                   </div>
                 </div>
 
@@ -365,32 +366,40 @@
                 <!-- Transfer Bank -->
                 <div id="debitCard" class="d-none">
                   <div class="row gy-3">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                       <label for="bankName" class="form-label">Bank Name</label>
-                      <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                      <select class="form-select" id="bankName" required>
+                        <option value="">Select Bank</option>
+                        <option value="bank1">Bank 1</option>
+                        <option value="bank2">Bank 2</option>
+                        <option value="bank3">Bank 3</option>
+                        <!-- Tambahkan pilihan bank lainnya sesuai kebutuhan -->
+                      </select>
                       <div class="invalid-feedback">
-                        Bank Name is required
+                        Please select a bank.
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <label for="accountNumber" class="form-label">Account Number</label>
-                      <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-                      <div class="invalid-feedback">
-                        Account Number is required required
-                      </div>
-                    </div>
+                    <div class="col-md-12">
+                      <div class="w-50">
 
-                    <div class="col-md-6">
-                      <label for="routingNumber" class="form-label
-                                      ">Routing Number</label>
-                      <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-                      <div class="invalid-feedback">
-                        Routing Number is required
+                        <label for="accountNumber" class="form-label">Account Number</label>
+                        <input type="text" class="form-control" id="accountNumber" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Account Number is required
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="w-50">
+                        <label for="routingNumber" class="form-label">Routing Number</label>
+                        <input type="text" class="form-control" id="routingNumber" placeholder="" required>
+                        <div class="invalid-feedback">
+                          Routing Number is required
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
                 <!-- Paypal -->
                 <div id="paypalCard" class="d-none">
                   <div class="row gy-3">
@@ -419,10 +428,6 @@
                     </div>
                   </div>
                 </div>
-
-
-
-
                 <hr class="my-4">
                 <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
               </form>
@@ -645,6 +650,7 @@
   <!-- JavaScript payment-->
 
   <script src="assets/js/app.js"></script>
+
 
   <!-- inject js end -->
 </body>
