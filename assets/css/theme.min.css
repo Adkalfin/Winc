@@ -1516,47 +1516,16 @@ Other
   }
 }
 
-@media print {
-  /* CSS untuk mencetak */
-  body * {
-    visibility: hidden;
-  }
-  #invoice-section,
-  #invoice-section * {
-    visibility: visible;
-  }
-  #invoice-section {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    font-size: 12px; /* Ukuran font saat tampilan cetak, dapat disesuaikan */
-    page-break-inside: avoid; /* Menghindari pemisahan ke halaman baru */
-  }
-  .card-body {
-    max-width: 100%; /* Lebar maksimum card body saat mencetak */
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    page-break-inside: avoid; /* Jangan membagi tabel ke halaman baru */
-  }
-  th,
-  td {
-    border: 1px solid #000;
-    padding: 5px; /* Mengurangi padding agar sel lebih kecil */
-    text-align: left;
-    page-break-inside: avoid; /* Jangan membagi sel ke halaman baru */
-  }
-  th {
-    background-color: #f2f2f2;
-  }
-  @page {
-    size: A4;
-    margin: 0;
-  }
-}
 
+/* Invoice */
+
+ @media print {
+    #section-pdf {
+        display: block;
+    }
+}
+/* End of Invoice Print */
+  
 @font-face {
   font-family: "Flaticon";
   src: url("../fonts/Flaticon.eot");
